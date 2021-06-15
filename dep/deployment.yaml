@@ -4,6 +4,8 @@ metadata:
   name: web-deploy
   labels: 
     app: web
+  annotations: 
+    fluxcd.io/automate: 'true'
 spec:
   replicas: 1
   selector:
