@@ -1,10 +1,11 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: web-deploy
-  labels: 
+  labels:
     app: web
-  annotations: 
+  annotations:
     fluxcd.io/automated: 'true'
 spec:
   replicas: 1
@@ -17,12 +18,10 @@ spec:
         app: web
     spec:
       containers:
-        - name: web-app
-          image: nginx:alpine
-
+      - name: web-app
+        image: nginx:1.20-alpine-perl
 ---
-
-apiVersion: v1 
+apiVersion: v1
 kind: Service
 metadata:
   name: my-service
